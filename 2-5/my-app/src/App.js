@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const message = 'Learn React';
+
+  const getGreetingMessage = (name) => {
+    if (name === 'jce') return `Hello, ${name}! Learn React`;
+    return `Welcome, ${name}! Learn React`;
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -14,9 +20,11 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">
-          Learn React
+          {getGreetingMessage('ad')}
         </a>
       </header>
+      <input type="checkbox" name="agreement" id="agreement-el"></input>
+      <lavel htmlFor="agreement-el">동의</lavel>
     </div>
   );
 }
