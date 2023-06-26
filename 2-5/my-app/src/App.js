@@ -1,11 +1,12 @@
 import './App.css';
-import Header from './components/Header.js';
+import Header from './components/Header';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
     <div className="App">
       <Header title={'Learn React A'} />
-      <Header title={'Learn React B'} />
+      <Welcome firstName={'j'} lastName={'ce'} withImg={true} />
     </div>
   );
 }
