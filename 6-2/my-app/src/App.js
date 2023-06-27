@@ -1,10 +1,10 @@
 import React from 'react';
-import Banner from './components/Banner';
+import Toggle from './components/Toggle';
 
 function App() {
   return (
     <div>
-      <Banner />
+      <Toggle />
     </div>
   );
 }
