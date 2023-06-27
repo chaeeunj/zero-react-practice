@@ -36,7 +36,9 @@ function App() {
         <BusinessCard info={pickedCards[pickedCards.length - 1]} />
       )} */}
       {pickedCards.length > 0 &&
-        pickedCards.map((pickedCard) => <BusinessCard info={pickedCard} />)}
+        pickedCards.map((pickedCard) => (
+          <BusinessCard info={pickedCard} key={pickedCard.phoneNumber} />
+        ))}
     </div>
   );
 }
