@@ -3,7 +3,14 @@ import SearchBar from './SearchBar';
 import StoreTable from './StoreTable';
 
 export default function OnlineStore() {
-  const [state, setState] = useState({ filterText: '', inStockOnly: false });
+  const [filter, setFilter] = useState({ text: '', inStockOnly: false });
+
+  const updateFilter = (key, value) => {
+    setFilter({
+      ...filter,
+      [key]: value,
+    });
+  };
 
   const datas = [
     {
@@ -46,8 +53,8 @@ export default function OnlineStore() {
 
   return (
     <div>
-      <SearchBar />
-      <StoreTable products={datas} />
+      <SearchBar filter={filter} updateFilter={updateFilter} />
+      <StoreTable products={datas} filter={filter} />
     </div>
   );
 }

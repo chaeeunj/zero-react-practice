@@ -2,11 +2,13 @@ import React from 'react';
 import ProductsTable from './ProductsTable';
 
 export default function StoreTable(props) {
-  const { products } = props;
-  // const sportingGoods = products.filter((p) => p.category === 'Sporting Goods');
-  // const electronics = products.filter((p) => p.category === 'Electronics');
+  const { products, filter } = props;
 
-  const result = products.reduce((acc, cur) => {
+  // products에서 filter.text가 있으면 -> 그것만 렌더링
+  const targetProduct = products.filter((p) => p.name === filter.text);
+  const filteredProducts = targetProduct.length > 0 ? targetProduct : products;
+
+  const result = filteredProducts.reduce((acc, cur) => {
     if (acc.hasOwnProperty(cur.category)) {
       // key(category)를 가지고 있는 경우 -> 배열에 추가만 하면 됨
       return {
@@ -34,7 +36,12 @@ export default function StoreTable(props) {
       </thead>
       <tbody>
         {keys.map((key, idx) => (
-          <ProductsTable category={key} items={result[key]} key={idx} />
+          <ProductsTable
+            category={key}
+            items={result[key]}
+            key={idx}
+            inStockOnly={filter.inStockOnly}
+          />
         ))}
       </tbody>
     </table>
