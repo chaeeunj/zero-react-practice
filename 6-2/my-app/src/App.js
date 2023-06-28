@@ -1,10 +1,10 @@
 import React from 'react';
-import SimpleForm from './components/SimpleForm';
+import UnControlledForm from './components/UnControlledForm';
 
 function App() {
   return (
     <div>
-      <SimpleForm />
+      <UnControlledForm />
     </div>
   );
 }
