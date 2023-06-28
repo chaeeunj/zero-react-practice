@@ -3,6 +3,8 @@ import SearchBar from './SearchBar';
 import StoreTable from './StoreTable';
 
 export default function OnlineStore() {
+  const [state, setState] = useState({ filterText: '', inStockOnly: false });
+
   const datas = [
     {
       category: 'Sporting Goods',
