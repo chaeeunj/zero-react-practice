@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 
 export default function SimpleForm() {
-  const [nickname, setNickName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userInputs, setUserInputs] = useState({
+    nickname: '',
+    password: '',
+  });
 
   const handleChange = (e) => {
-    if (e.target.name === 'nickname') return setNickName(e.target.value);
-    return setPassword(e.target.value);
+    setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
+    // if (e.target.name === 'nickname') return setNickName(e.target.value);
+    // return setPassword(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`nickname : ${nickname}, password : ${password}`);
+    alert(
+      `nickname : ${userInputs.nickname}, password : ${userInputs.password}`
+    );
   };
 
   return (
@@ -21,7 +26,7 @@ export default function SimpleForm() {
         type="text"
         name="nickname"
         onChange={handleChange}
-        value={nickname}
+        value={userInputs.nickname}
       />
       <br />
       <label>패스워드 :</label>
@@ -29,7 +34,7 @@ export default function SimpleForm() {
         type="text"
         name="password"
         onChange={handleChange}
-        value={password}
+        value={userInputs.password}
       />
       <input type="submit" value="제출" />
     </form>
