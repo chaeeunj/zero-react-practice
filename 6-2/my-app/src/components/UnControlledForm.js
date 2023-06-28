@@ -13,6 +13,7 @@ export default function UnControlledForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(inputRef.current.value);
+    inputRef.current.focus();
   };
 
   return (

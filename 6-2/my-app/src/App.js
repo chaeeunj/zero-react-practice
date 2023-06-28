@@ -1,10 +1,10 @@
 import React from 'react';
-import UnControlledForm from './components/UnControlledForm';
+import CatParent from './components/CatParent';
 
 function App() {
   return (
     <div>
-      <UnControlledForm />
+      <CatParent />
     </div>
   );
 }
