@@ -1,10 +1,10 @@
 import React from 'react';
-import Toggle from './components/Toggle';
+import SimpleForm from './components/SimpleForm';
 
 function App() {
   return (
     <div>
-      <Toggle />
+      <SimpleForm />
     </div>
   );
 }
